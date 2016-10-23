@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>ESP8266 LED Control</title>
+  </head>
+  <body>
+    <h>ESP8266 LED Control</h></br></br>
+	<button id="11" class="led">LED PIN 11</button>
+	<button id="12" class="led">LED PIN 12</button>
+	<button id="13" class="led">LED PIN 13</button>
+	
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+	  $(document).ready(function(){
+	    $(".led").click(function(){
+		  var p = $(this).attr("id");
+		  $.get("http://192.168.0.9/",{pin:p});
+		});
+	  });
+	</script>
+  </body>
+</html>
